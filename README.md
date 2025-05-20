@@ -1,7 +1,7 @@
 # htop_android_complie
-//start complie  
+**//start complie**  
 //  
-1.get ncurses library  
+1.**get ncurses library**  
 wget http://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz  
 tar -xvf ncurses-6.0.tar.gz  
 2.set the compile envs  
@@ -13,10 +13,10 @@ export AS=/mnt/d/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/aarc
 export AR=/mnt/d/android-ndk-r21e/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ar  
 export CFLAGS="-fPIE -fPIC -Wno-error -Wno-null-pointer-arithmetic -I/mnt/g/htop_android/ncurses-6.0/install_/include/ncurses -I/mnt/g/htop_android/ncurses-6.0/install_/include"  
 export LDFLAGS="-pie -L/mnt/g/htop_android/ncurses-6.0/install_/lib"  
-2.complie ncurses  
+2.**complie ncurses**  
 ./configure --host=aarch64-linux-android26 --prefix=/mnt/g/htop_android/ncurses-6.0/install_ --with-shared  
 make -j4 && sudo make install  
-3.complie htop  
+3.**complie htop**  
 git clone --recursive https://github.com/htop-dev/htop  
 cd htop  
 git checkout 3.2.2  
@@ -30,7 +30,7 @@ add   #define ffsl __builtin_ffsl in the top
 ./configure --host=aarch64-linux-android --prefix=/mnt/g/htop_android/htop/install_ --disable-unicode  
 make -j4 && sudo make install  
   
-3.add the terminal files sources  
+3.**add the terminal files sources**  
 fix:  
 Error opening terminal: xterm-256color  
   
